@@ -9,10 +9,33 @@ app.set('view engine', 'hbs');
 
 
 
-const clima = require('./clima')
+const clima = require('./clima');
 
-let h = clima.getClima(-0.190000, -78.500000)
-Promise.resolve(console.log(h));
+
+const pruba = async() => {
+
+    try {
+        q = await clima.getClima(-0.190000, -78.500000);
+
+        g = await clima.getClima(-2.210000, -79.900002);
+
+        m = await clima.getClima(40.419998, -3.700000);
+
+        p = await clima.getClima(43.720001, 10.400000);
+        return q, g, m, p;
+    } catch {
+        console.log('error');
+        return 'error';
+
+    }
+
+
+};
+
+pruba();
+
+//clima.getClima(-0.190000, -78.500000).then(console.log)
+
 
 //helpers
 
@@ -20,14 +43,16 @@ require('./hbs/helpers')
 
 app.get('/', function(req, res) {
     res.render('home', { //con esto se renderiza-se dibuja la plantilla (para usar un aplantilla -codigo html que tiene ciertas variables )
-
+        q,
+        g
 
     });
 });
 
 app.get('/mundo', (req, res) => { //nuevo lugar de la aplicacion
     res.render('mundo', { //con esto se renderiza-se dibuja la plantilla (para usar un aplantilla -codigo html que tiene ciertas variables )
-
+        p,
+        m
     });
 });
 

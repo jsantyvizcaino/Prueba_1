@@ -1,9 +1,19 @@
 const hbs = require('hbs');
 
 const axios = require('axios');
+const clima = require('../clima')
+const asyncHelpers = require('async-helpers');
+
+
+hbs.registerHelper('clima', function() {
+
+    return clima.getClima(-0.190000, -78.500000).then(function(temp) {
+        return temp
+    });
 
 
 
+});
 
 
 hbs.registerHelper('clima1', async() => {
