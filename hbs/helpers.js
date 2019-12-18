@@ -14,6 +14,34 @@ hbs.registerHelper('clima1', async() => {
 })
 
 
+hbs.registerHelper('clima2', async() => {
+    let lat = -2.210000;
+    let long = -79.900002;
+    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4645dc5c0f55f44b894afc86f2815ca6&units=metric`);
+    return resp.data.main.temp;
+})
+
+
+
+hbs.registerHelper('clima3', async() => {
+    let lat = -40.419998;
+    let long = -3.700000;
+    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4645dc5c0f55f44b894afc86f2815ca6&units=metric`);
+    return resp.data.main.temp;
+})
+
+
+
+
+hbs.registerHelper('clima4', async() => {
+    let lat = -43.720001;
+    let long = -10.400000;
+    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4645dc5c0f55f44b894afc86f2815ca6&units=metric`);
+    return resp.data.main.temp;
+})
+
+
+
 // clima.getClima(-0.190000, -78.500000).then(console.log);
 
 //-2.210000, -79.900002 guayaquill

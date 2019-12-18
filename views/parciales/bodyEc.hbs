@@ -9,6 +9,8 @@
     <div class="col">
        <h2>Temp, <h2>Temp, {{ clima1 }}</h2> <script>
 const axios = require('axios');
+  let lat = -0.190000;
+    let long = -78.500000;
 
 const getClima = async(lat, long) => {
     const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4645dc5c0f55f44b894afc86f2815ca6&units=metric`);
@@ -28,7 +30,7 @@ const getClima = async(lat, long) => {
       
     </div>
     <div class="col">
-       {{!-- <h2>Temp, {{ clima1 }}</h2> --}}
+       <h2>Temp, {{ clima2 }}</h2>
     </div>
   </div>
   
