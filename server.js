@@ -34,12 +34,7 @@ const pruba = async() => {
 
 pruba();
 
-//clima.getClima(-0.190000, -78.500000).then(console.log)
 
-
-//helpers
-
-require('./hbs/helpers')
 
 app.get('/', function(req, res) {
     res.render('home', { //con esto se renderiza-se dibuja la plantilla (para usar un aplantilla -codigo html que tiene ciertas variables )
