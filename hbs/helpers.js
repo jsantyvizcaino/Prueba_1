@@ -1,13 +1,16 @@
 const hbs = require('hbs');
+
 const axios = require('axios');
-const clima = require('./controlador/clima');
 
 
-hbs.registerHelper('clima', () => {
-    let temp = clima.getClima(-0.190000, -78.500000);
 
-    return temp
 
+
+hbs.registerHelper('clima1', async() => {
+    let lat = -0.190000;
+    let long = -78.500000;
+    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4645dc5c0f55f44b894afc86f2815ca6&units=metric`);
+    return resp.data.main.temp;
 })
 
 

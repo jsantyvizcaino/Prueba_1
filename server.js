@@ -8,23 +8,28 @@ hbs.registerPartials(__dirname + '/views/parciales'); //registrar el parcial est
 app.set('view engine', 'hbs');
 
 
+
+const clima = require('./clima')
+
+let h = clima.getClima(-0.190000, -78.500000)
+Promise.resolve(console.log(h));
+
 //helpers
 
 require('./hbs/helpers')
 
-// app.get('/', function(req, res) {
-//     res.render('home', { //con esto se renderiza-se dibuja la plantilla (para usar un aplantilla -codigo html que tiene ciertas variables )
-//         nombre: "santIago",
+app.get('/', function(req, res) {
+    res.render('home', { //con esto se renderiza-se dibuja la plantilla (para usar un aplantilla -codigo html que tiene ciertas variables )
 
-//     });
-// });
 
-// app.get('/mundo', (req, res) => { //nuevo lugar de la aplicacion
-//     res.render('mundo', { //con esto se renderiza-se dibuja la plantilla (para usar un aplantilla -codigo html que tiene ciertas variables )
-//         nombre: "santiagO",
+    });
+});
 
-//     });
-// });
+app.get('/mundo', (req, res) => { //nuevo lugar de la aplicacion
+    res.render('mundo', { //con esto se renderiza-se dibuja la plantilla (para usar un aplantilla -codigo html que tiene ciertas variables )
+
+    });
+});
 
 
 app.listen(port, () => { // listen con callback

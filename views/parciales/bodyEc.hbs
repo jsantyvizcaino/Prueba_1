@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>
+           QUITO
+      </h1>
+      
+    </div>
+    <div class="col">
+       <h2>Temp, <h2>Temp, {{ clima1 }}</h2> <script>
+const axios = require('axios');
+
+const getClima = async(lat, long) => {
+    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4645dc5c0f55f44b894afc86f2815ca6&units=metric`);
+    return resp.data.main.temp;
+}
+
+
+
+       </script></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1>
+           GUAYAQUIL
+      </h1>
+      
+    </div>
+    <div class="col">
+       {{!-- <h2>Temp, {{ clima1 }}</h2> --}}
+    </div>
+  </div>
+  
+</div>
