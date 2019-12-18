@@ -9,7 +9,7 @@ app.set('view engine', 'hbs');
 
 
 
-const clima = require('./clima');
+const clima = require('./controlador/clima');
 
 
 const pruba = async() => {
